@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Liste des films</title>
-    <!-- Ajout du CDN de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<title>Liste des films</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #F9F9F9;
+		}
+		table {
+			border-collapse: collapse;
+			margin: 20px auto;
+			background-color: #FFFFFF;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+			width: 80%;
+		}
+		thead {
+			background-color: #F2F2F2;
+			font-weight: bold;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #CCCCCC;
+		}
+		th a {
+			color: #333333;
+			text-decoration: none;
+			display: block;
+			position: relative;
+		}
+		th a:hover {
+			color: #222222;
+		}
+		th a:before {
+			content: "";
+			display: block;
+			height: 6px;
+			width: 6px;
+			border-bottom: 1px solid #333333;
+			border-right: 1px solid #333333;
+			transform: rotate(-45deg);
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			margin-top: -4px;
+		}
+		th a.asc:before {
+			transform: rotate(135deg);
+			border-bottom: 1px solid #FFFFFF;
+			border-right: 1px solid #FFFFFF;
+			border-top: 1px solid #333333;
+			border-left: 1px solid #333333;
+		}
+		th a.desc:before {
+			transform: rotate(-135deg);
+			border-top: 1px solid #FFFFFF;
+			border-left: 1px solid #FFFFFF;
+			border-bottom: 1px solid #333333;
+			border-right: 1px solid #333333;
+		}
+		tbody tr:nth-child(odd) {
+			background-color: #F9F9F9;
+		}
+		tbody tr:hover {
+			background-color: #F2F2F2;
+		}
+		.pagination {
+			margin: 20px auto;
+			text-align: center;
+			font-size: 14px;
+		}
+		.pagination a {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #FFFFFF;
+			border: 1px solid #DDDDDD;
+			color: #333333;
+			text-decoration: none;
+			margin-right: 5px;
+		}
+		.pagination a:hover {
+			background-color: #F2F2F2;
+			border: 1px solid #BBBBBB;
+		}
+		.pagination .current {
+			background-color: #0073AA;
+			border: 1px solid #0073AA;
+			color: #FFFFFF;
+		}
+	</style>
 </head>
 <body>
 
