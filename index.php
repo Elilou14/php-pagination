@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des films</title>
+    <!-- Ajout du CDN de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+
 <?php
 // Connexion à la base de données
 $servername = "unixshell.hetic.glassworks.tech";
@@ -47,7 +57,7 @@ $total_results = $row_count['count'];
 $total_pages = ceil($total_results / $results_per_page);
 
 // Affichage des résultats
-echo "<table>
+echo "<table class='table table-dark table-striped'>
         <thead>
             <tr>
                 <th><a href='?sort_by=film_title&sort_order=".($sort_by=='film_title' && $sort_order=='ASC' ? 'DESC' : 'ASC')."'>Nom du film</a></th>
@@ -75,7 +85,7 @@ if ($result->num_rows > 0) {
                 </table>";
 
                 // Affichage de la pagination
-                echo "<div>";
+                echo "<div class='pagination' >";
                 if ($total_results > $results_per_page) {
                 if ($current_page > 1) {
                 echo "<a href='?page=".($current_page - 1)."&sort_by=$sort_by&sort_order=$sort_order'>Précédent</a>";
